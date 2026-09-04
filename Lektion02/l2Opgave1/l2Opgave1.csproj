@@ -5,6 +5,7 @@
         <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RootNamespace>Opgave01</RootNamespace>
     </PropertyGroup>
     
 </Project>

@@ -8,7 +8,7 @@ public class Program
     static void Main(string[] args)
     {
         string json = GetPotterJson();
-        // TODO: Deserialiser JSON-strengen til en liste af objekter (opret en model i Opgave02/model mappen)
+        // TODO: Deserialiser JSON-strengen til en liste af objekter (opret en model i l2Opgave2/model mappen)
         // TODO: Udskriv navn og kollegium (HogwartsHouse) for alle karakterer
         JsonSerializerOptions options = new()
         {

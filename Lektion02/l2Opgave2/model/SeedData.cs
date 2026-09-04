@@ -9,6 +9,7 @@ public static class SeedData
     public static readonly Product Kontorstol = new(5, "Kontorstol", Category.Mobler, 899m, 3);
     public static readonly Product Skaerm = new(6, "Skærm 27\"", Category.Elektronik, 1999m, 12);
     public static readonly Product Vandkoger = new(7, "Vandkoger", Category.Husholdning, 199m, 15);
+    public static readonly Product Robot = new(6, "Robot Støvsuger\"", Category.Elektronik, 1999m, 0);
 
     public static List<Product> Products = new()
     {
@@ -18,7 +19,8 @@ public static class SeedData
         Skrivebord,
         Kontorstol,
         Skaerm,
-        Vandkoger
+        Vandkoger,
+        Robot
     };
 
     public static List<Customer> Customers = new()

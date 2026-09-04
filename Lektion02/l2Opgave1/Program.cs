@@ -12,6 +12,34 @@ class Program
       PropertyNameCaseInsensitive = true
     };
     var characters = JsonSerializer.Deserialize<List<Character>>(GetPotterJson(), jsonOptions);
+    
+    //Udskriv FullName og HogwartsHouse for alle karaktererne i konsollen.
+    
+    foreach (var character in characters)
+    {
+      Console.WriteLine($" {character.FullName}  {character.HogwartsHouse}");
+    }
+    characters.ForEach(c => Console.WriteLine($"Fornavn: {c.FullName} Hus: {c.HogwartsHouse}"));
+    Console.WriteLine();
+    
+    
+    //Udskriv alle karakterer, der tilhører kollegiet Gryffindor.
+    characters.Where(character => character.HogwartsHouse == "Gryffindor")
+      .ToList()
+      .ForEach(c => Console.WriteLine(c)); // eller inde i din foreach bruge driekte Console.Writeline. Men uden () // også kaldt method reference
+    //.ForEach(Console.Writeline); fx 
+
+
+    Console.WriteLine();
+    //Udskriv navnene på de karakterer, der har børn (Children.Count > 0), samt børnenes navne.
+    characters.Where(character => character.Children.Count > 0)
+      .ToList()
+      .ForEach(c =>
+      {
+        Console.WriteLine(c.FullName);
+        c.Children.ForEach(cc => Console.WriteLine("   -   " + cc)); // eller brug \t for at få indryk 
+      });
+    
   }
 
   public static string GetPotterJson()
