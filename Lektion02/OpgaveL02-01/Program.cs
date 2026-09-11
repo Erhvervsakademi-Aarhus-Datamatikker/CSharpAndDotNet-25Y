@@ -3,7 +3,7 @@ using Opgave01.model;
 
 namespace Opgave01;
 
-class Program
+class ppProgram
 {
   static void Main(string[] args)
   {
@@ -12,6 +12,25 @@ class Program
       PropertyNameCaseInsensitive = true
     };
     var characters = JsonSerializer.Deserialize<List<Character>>(GetPotterJson(), jsonOptions);
+
+    foreach (var c in characters.Select(c => new { c.FullName, c.HogwartsHouse }))
+    {
+      Console.WriteLine($"{c.FullName} {c.HogwartsHouse}");
+    }
+    
+    var gryffindor = characters.Where(c => c.HogwartsHouse == "Gryffindor");
+
+    foreach (var c in gryffindor)
+    {
+      Console.WriteLine(c.FullName);
+    }
+    
+    var withChildren = characters.Where(c => c.Children.Count > 0);
+
+    foreach (var c in withChildren)
+    {
+      Console.WriteLine($"{c.FullName}: {string.Join(", ", c.Children)}");
+    }
   }
 
   public static string GetPotterJson()

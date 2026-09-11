@@ -2,8 +2,14 @@ namespace Lektion03Opgave02;
 
 // TODO: Opret den manglende 'LogHandler' delegate med den korrekte signatur her!
 
-class Lektion03Opgave02Main
+public delegate void LogHandler(string message, DateTime timestamp);
+
+
+class kLektion03Opgave02Main
 {
+    
+    
+    
     static void Main(string[] args)
     {
         var processor = new LogProcessor();

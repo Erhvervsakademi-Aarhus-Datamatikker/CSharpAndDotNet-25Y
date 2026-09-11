@@ -10,16 +10,25 @@ class Program
         // Opgave 1.1: Serialiser et enkelt Item-objekt til JSON
         Item item = GetItem();
         // TODO: Serialiser 'item' til en JSON-streng og udskriv den til konsollen
+        string json = JsonSerializer.Serialize(item);
+        Console.WriteLine(json);
 
 
         // Opgave 1.2: Serialiser et Order-objekt til JSON med pæn formatering (WriteIndented)
         Order order = GetOrder();
         // TODO: Serialiser 'order' til en JSON-streng med WriteIndented = true og udskriv den til konsollen
-
+        var options = new JsonSerializerOptions{ WriteIndented = true };
+        string json2 = JsonSerializer.Serialize(order, options);
+        Console.WriteLine(json2);
+        
 
         // Opgave 1.3: Serialiser en liste af ordrer (List<Order>) til JSON
         List<Order> orders = GetOrders();
         // TODO: Serialiser 'orders' til en JSON-streng og udskriv den til konsollen
+        var option2 = new JsonSerializerOptions{ WriteIndented = true };
+        string json3 = JsonSerializer.Serialize(orders, option2);
+        Console.WriteLine(json3);
+        
     }
 
     public static Item GetItem()
@@ -54,4 +63,4 @@ class Program
         };
     }
 }
-
+
